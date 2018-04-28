@@ -1,0 +1,22 @@
+﻿<UserControl
+    x:Class="SoundCloud.TopTrackControl"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:SoundCloud"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    d:DesignHeight="80"
+    d:DesignWidth="1920">
+
+    <StackPanel Width="260" Margin="20">
+        <Grid FlowDirection="LeftToRight">
+            <Image Source="{x:Bind TopTrack.artwork_url}" Stretch="Fill" Width="260" Height="260" />
+            <Border Background="Black" Height="30" Padding="0, 0, 0, 0" VerticalAlignment="Top" Margin="0, 20, 0, 0" HorizontalAlignment="Right">
+                <TextBlock FontWeight="Bold" Text="{x:Bind TopTrack.genre}" VerticalAlignment="Center" FlowDirection="RightToLeft" Foreground="White"/>
+            </Border>
+        </Grid>
+        <TextBlock Margin="0, 10, 0, 0" Text="{x:Bind TopTrack.title}" TextTrimming="CharacterEllipsis" FontSize="18" FontWeight="SemiBold" Foreground="White" Opacity="0.7"/>
+        <TextBlock Text="{x:Bind TopTrack.user.username}" FontSize="16" Foreground="Gray" />
+    </StackPanel>
+</UserControl>

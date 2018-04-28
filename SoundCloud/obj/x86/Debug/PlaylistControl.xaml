@@ -1,0 +1,39 @@
+﻿<UserControl x:ConnectionId='1'
+    x:Class="SoundCloud.PlaylistControl"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:SoundCloud"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    xmlns:data="using:SoundCloud.Models"
+    d:DesignHeight="300"
+    d:DesignWidth="1920">
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="auto" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+        <Image Source="https://i1.sndcdn.com/avatars-000333197764-zard19-t500x500.jpg" Width="180" Height="180" />
+        <StackPanel Grid.Column="1">
+            <StackPanel Orientation="Horizontal">
+                <Button x:ConnectionId='5' Name="PlayAllPlaylist"                               Content="Play All" Background="Transparent" Margin="20, 10" />
+                <Button x:ConnectionId='6' Name="SharePlaylist" Content="Share" Background="Transparent" Margin="20,10" />
+            </StackPanel>
+            <ScrollViewer Height="130" MaxHeight="120">
+                <ListView x:ConnectionId='2' MaxHeight="120"                                         IsItemClickEnabled="True"                               >
+                    <ListView.ItemTemplate>
+                        <DataTemplate                                  >
+                            <StackPanel x:ConnectionId='3' Orientation="Horizontal" VerticalAlignment="Center">
+                                <TextBlock VerticalAlignment="Center" FontSize="20" Text="" FontFamily="Segoe MDL2 Assets"/>
+                                <TextBlock x:ConnectionId='4' VerticalAlignment="Center" FontSize="18"                       TextTrimming="CharacterEllipsis" Margin="10" />
+                            </StackPanel>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </ScrollViewer>
+        </StackPanel>
+    </Grid>
+</UserControl>
+
